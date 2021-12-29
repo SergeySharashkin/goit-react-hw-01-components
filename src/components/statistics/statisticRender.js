@@ -1,15 +1,26 @@
-import PropTypes from "prop-types";
-
-export default function StatisticRender({ title, stats }) {
-  return (
-    <li key={title}
-    className="item">
-    <span className="label">{title}</span>
-    <span className="percentage">{stats}%</span>
-  </li>)
-  
-}
-StatisticRender.propTypes = {
-    title: PropTypes.string,
-    stats: PropTypes.number
+import PropTypes from 'prop-types'
+import Statistic from "./statistic"
+function StatisticRender({data}) {
+    return(
+        <section className="statistics">
+        <h2 className="title">Upload stats</h2>
+        <ul className="stat-list">
+          {data.map((dataItem) => (
+            <Statistic
+              key={dataItem.id}
+              titel={dataItem.label}
+              stats={dataItem.percentage}
+            />
+          ))}
+        </ul>
+      </section>
+    )
 };
+StatisticRender.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape(
+            {id: PropTypes.string.isRequired}
+        ),
+    )
+}
+export default StatisticRender

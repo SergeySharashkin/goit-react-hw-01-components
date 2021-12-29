@@ -1,7 +1,12 @@
 import SocProfRender from "./components/social-profile/SocialProfileRender";
 import user from "./components/social-profile/user.json";
-import StatisticRender from "./components/statistics/statisticRender";
+import StatisticRender from "./components/statistics/StatisticRender";
 import data from "./components/statistics/data.json";
+import FriendsListRender from "./components/friend-list/FriendsListRender";
+import friends from "./components/friend-list/friends.json";
+import TransHistoryRender from './components/transaction-history/TransHistoryRender';
+import transactions from './components/transaction-history/transactions.json';
+
 export default function App() {
   return (
     <div>
@@ -13,17 +18,11 @@ export default function App() {
         stats={user.stats}
       />
 
-      <section className="statistics">
-        <h2 className="title">Upload stats</h2>
-        <ul className="stat-list">
-          {data.map((dataItem) => (
-            <StatisticRender
-              titel={dataItem.label}
-              stats={dataItem.percentage}
-            />
-          ))}
-        </ul>
-      </section>
+      <StatisticRender data = {data} />
+         
+      <FriendsListRender friends={friends}  />
+      <TransHistoryRender transactions={transactions}/>
+                
     </div>
   );
 }

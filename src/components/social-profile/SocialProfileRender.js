@@ -30,9 +30,9 @@ export default function SocProfRender({userName, tag, place, avatar, stats}) {
   </div>
 }
 SocProfRender.propTypes = {
-    avatar: PropTypes.string,
-    userName: PropTypes.string,
-    tag: PropTypes.string,
-    place: PropTypes.string,
-    stats: PropTypes.object
+    avatar: PropTypes.string.isRequired,
+    userName: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    place: PropTypes.string.isRequired,
+    stats: PropTypes.object.isRequired
 };
