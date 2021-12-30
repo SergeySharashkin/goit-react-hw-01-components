@@ -1,26 +1,29 @@
-import PropTypes from 'prop-types'
-import Statistic from "./statistic"
-function StatisticRender({data}) {
-    return(
-        <section className="statistics">
-        <h2 className="title">Upload stats</h2>
-        <ul className="stat-list">
-          {data.map((dataItem) => (
-            <Statistic
-              key={dataItem.id}
-              titel={dataItem.label}
-              stats={dataItem.percentage}
-            />
-          ))}
-        </ul>
-      </section>
-    )
-};
-StatisticRender.propTypes = {
-    data: PropTypes.arrayOf(
-        PropTypes.shape(
-            {id: PropTypes.string.isRequired}
-        ),
-    )
+import PropTypes from "prop-types";
+
+function StatisticRender({ data }) {
+  return (
+    <section className="statistics">
+      <h2 className="title">Upload stats</h2>
+      <ul className="stat-list">
+        {data.map(
+          (dataItem) => {
+            return (
+              <li className="item" key={dataItem.id}>
+                <span className="label">{dataItem.title}</span>
+                <span className="percentage">{dataItem.stats}%</span>
+              </li>
+            );
+          }
+
+        )}
+      </ul>
+    </section>
+  );
 }
-export default StatisticRender
+StatisticRender.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape(
+    { id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      stats: PropTypes.number.isRequired, })),
+};
+export default StatisticRender;
