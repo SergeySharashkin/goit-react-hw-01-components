@@ -1,33 +1,37 @@
 import PropTypes from 'prop-types';
+import {Profile, Description, Avatar, Name, Tag, Stats, Item} from './SocialProfile.styled';
 export default function SocProfRender({userName, tag, place, avatar, stats}) {
     
-    return <div className="profile">
-    <div className="description">
-      <img
+    return <Profile className="profile">
+    <Description className="description">
+      
+          <Avatar
         src={avatar}
         alt="User avatar"
         className="avatar"
+        
       />
-      <p className="name">{userName}</p>
-      <p className="tag">@{tag}</p>
-      <p className="location">{place}</p>
-    </div>
+      
+      <Name className="name">{userName}</Name>
+      <Tag className="tag">@{tag}</Tag>
+      <Tag className="location">{place}</Tag>
+    </Description>
   
-    <ul className="stats">
-      <li>
+    <Stats className="stats">
+      <Item>
         <span className="label">Followers</span>
         <span className="quantity">{stats.followers}</span>
-      </li>
-      <li>
+      </Item>
+      <Item>
         <span className="label">Views</span>
         <span className="quantity">{stats.views}</span>
-      </li>
-      <li>
+      </Item>
+      <Item>
         <span className="label">Likes</span>
         <span className="quantity">{stats.likes}</span>
-      </li>
-    </ul>
-  </div>
+      </Item>
+    </Stats>
+  </Profile>
 }
 SocProfRender.propTypes = {
     avatar: PropTypes.string.isRequired,

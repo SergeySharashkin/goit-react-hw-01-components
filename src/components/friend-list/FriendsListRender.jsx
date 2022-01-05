@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
-import FriendsList from "./FriendsList"
+import FriendsList from "./FriendsList";
+import {FriendList} from './FrendsList.styled'
 
 function FriendsListRender({ friends }) {
-   return( <ul className="friend-list">
+   return( <FriendList className="friend-list">
    {friends.map((friend) => (
          <FriendsList
          key={friend.id}
@@ -12,7 +13,7 @@ function FriendsListRender({ friends }) {
        />
        
      ))}
-   </ul>)
+   </FriendList>)
 }
 FriendsListRender.propTypes = {
   friends: PropTypes.arrayOf(
