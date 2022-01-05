@@ -4,14 +4,13 @@ export const FriendList = styled.ul`
   flex-direction: column;
   justify-content: center;
   margin: 100px auto;
-  max-width: 700px;
+  max-width: 550px;
 `;
 export const Item = styled.li`
   display: flex;
   flex-direction: row;
   padding: 15px;
-  border: 1px solid #102030;
-  justify-content: space-between;
+  border: 1px solid #10203060;
   align-items: center;
 `;
 export const Status = styled.span`
@@ -19,6 +18,7 @@ export const Status = styled.span`
   height: 40px;
   border-radius: 50%;
   display: block;
+  margin: 0 30px 0 0;
   background-color: ${(props) => {
     switch (props.state) {
       case "online":
@@ -32,8 +32,10 @@ export const Status = styled.span`
 `;
 export const Avatar = styled.img`
 width: 80px;
-border: 1px solid green;
-border-radius: 15px;
+border: 1px solid #BBCCFF;
+border-radius: 25px;
 padding: 10px`;
 export const Name = styled.p`
-font-size: 35px`;
+margin: 0 0 0 50px;
+font-size: 45px;
+margin: 0 30px 0 auto`;
