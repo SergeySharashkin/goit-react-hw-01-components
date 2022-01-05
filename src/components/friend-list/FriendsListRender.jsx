@@ -4,12 +4,12 @@ import {FriendList} from './FrendsList.styled'
 
 function FriendsListRender({ friends }) {
    return( <FriendList className="friend-list">
-   {friends.map((friend) => (
+   {friends.map(({id,avatar,name,isOnline}) => (
          <FriendsList
-         key={friend.id}
-         avatar={friend.avatar}
-         name={friend.name}
-         isOnline={friend.isOnline}
+         key={id}
+         avatar={avatar}
+         name={name}
+         isOnline={isOnline}
        />
        
      ))}
@@ -18,7 +18,10 @@ function FriendsListRender({ friends }) {
 FriendsListRender.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({
-    id: PropTypes.number.isRequired
+    id: PropTypes.number.isRequired,
+    avatar:PropTypes.string.isRequired,
+    name:PropTypes.string.isRequired,
+    isOnline:PropTypes.bool.isRequired,
   }),
   ),
 };

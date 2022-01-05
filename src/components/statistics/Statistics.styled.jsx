@@ -3,8 +3,10 @@ export const Section = styled.section`
 display: flex;
 flex-direction: column;
 justify-content: center;
-padding: 50px 250px;
-margin: auto;
+
+margin: 0 auto;
+max-width: 600px;
+width:100%;
 
 `
 export const Title = styled.h2`

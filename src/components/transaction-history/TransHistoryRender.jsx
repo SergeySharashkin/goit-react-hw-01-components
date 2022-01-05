@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import {Table,TableHead, TableHeadList, TableHeadItem, TableBody, TableBodyList, TableBodyItem} from './Transactions.styled'
 export default function TransHistoryRender({ transactions }) {
   return (
-    <Table class="transaction-history">
+    <Table >
       <TableHead>
         <TableHeadList>
           <TableHeadItem>Type</TableHeadItem>
@@ -12,12 +12,12 @@ export default function TransHistoryRender({ transactions }) {
       </TableHead>
 
       <TableBody>
-        {transactions.map((trans) => {
+        {transactions.map(({id,type,amount,currency}) => {
           return (
-            <TableBodyList key={trans.id}>
-              <TableBodyItem>{trans.type}</TableBodyItem>
-              <TableBodyItem>{trans.amount}</TableBodyItem>
-              <TableBodyItem>{trans.currency}</TableBodyItem>
+            <TableBodyList key={id}>
+              <TableBodyItem>{type}</TableBodyItem>
+              <TableBodyItem>{amount}</TableBodyItem>
+              <TableBodyItem>{currency}</TableBodyItem>
             </TableBodyList>
           );
         })}

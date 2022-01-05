@@ -3,8 +3,8 @@ export const FriendList = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 50px 150px;
-  margin: auto;
+  margin: 100px auto;
+  max-width: 700px;
 `;
 export const Item = styled.li`
   display: flex;
@@ -31,6 +31,9 @@ export const Status = styled.span`
   
 `;
 export const Avatar = styled.img`
-width: 150px`;
+width: 80px;
+border: 1px solid green;
+border-radius: 15px;
+padding: 10px`;
 export const Name = styled.p`
 font-size: 35px`;

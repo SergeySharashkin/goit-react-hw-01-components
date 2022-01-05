@@ -3,8 +3,8 @@ export const Profile = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
-padding: 150px;
-margin: auto;
+max-width: 500px;
+margin: 100px auto 100px;
 `;
 export const Description = styled.div`
 display: flex;
