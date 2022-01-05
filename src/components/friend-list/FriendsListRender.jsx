@@ -3,7 +3,7 @@ import FriendsList from "./FriendsList";
 import {FriendList} from './FrendsList.styled'
 
 function FriendsListRender({ friends }) {
-   return( <FriendList className="friend-list">
+   return( <FriendList>
    {friends.map(({id,avatar,name,isOnline}) => (
          <FriendsList
          key={id}

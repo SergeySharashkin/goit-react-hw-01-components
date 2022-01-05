@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import {Profile, Description, Avatar, Name, Tag, Stats, Item} from './SocialProfile.styled';
 export default function SocProfRender({userName, tag, place, avatar, stats}) {
     
-    return <Profile className="profile">
-    <Description className="description">
+    return <Profile>
+    <Description>
       
           <Avatar
         src={avatar}
@@ -12,23 +12,23 @@ export default function SocProfRender({userName, tag, place, avatar, stats}) {
         
       />
       
-      <Name className="name">{userName}</Name>
-      <Tag className="tag">@{tag}</Tag>
-      <Tag className="location">{place}</Tag>
+      <Name>{userName}</Name>
+      <Tag>@{tag}</Tag>
+      <Tag>{place}</Tag>
     </Description>
   
-    <Stats className="stats">
+    <Stats>
       <Item>
-        <span className="label">Followers</span>
-        <span className="quantity">{stats.followers}</span>
+        <span>Followers</span>
+        <span>{stats.followers}</span>
       </Item>
       <Item>
-        <span className="label">Views</span>
-        <span className="quantity">{stats.views}</span>
+        <span>Views</span>
+        <span>{stats.views}</span>
       </Item>
       <Item>
-        <span className="label">Likes</span>
-        <span className="quantity">{stats.likes}</span>
+        <span>Likes</span>
+        <span>{stats.likes}</span>
       </Item>
     </Stats>
   </Profile>
