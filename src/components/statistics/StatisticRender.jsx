@@ -7,11 +7,20 @@ export default function StatisticRender({ data }) {
       <StatList>
         {data.map(
           ({id,label,percentage}) => {
-            return (<Item id={id} key={id}>
+            if (label) {
+              return (<Item id={id} key={id}>
                 <Label>{label}</Label>
                 <Percentage>{percentage}%</Percentage>
               </Item>
-            );
+            ); 
+            }
+           else {
+            return (<Item id={id} key={id}>
+              
+              <Percentage>{percentage}%</Percentage>
+            </Item>
+          );
+           }
           }
         )}
       </StatList>
@@ -21,7 +30,7 @@ export default function StatisticRender({ data }) {
 StatisticRender.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape(
     { id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
+      label: PropTypes.string,
       percentage: PropTypes.number.isRequired,
       
      })),

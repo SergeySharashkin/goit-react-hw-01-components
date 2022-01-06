@@ -19,7 +19,7 @@ text-align: center;
 text-transform: uppercase;
 `
 export const TableBodyList = styled.tr`
-:nth-child(2n) {
+:nth-of-type(2n) {
     background-color: #AABBFF;
     }
 `
