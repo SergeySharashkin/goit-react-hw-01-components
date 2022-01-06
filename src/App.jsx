@@ -1,10 +1,10 @@
-import SocProfRender from "./components/social-profile/SocialProfileRender";
+import Profile from "./components/social-profile/Profile";
 import user from "./components/social-profile/user.json";
-import StatisticRender from "./components/statistics/StatisticRender";
+import Statistic from "./components/statistics/Statistics";
 import data from "./components/statistics/data.json";
-import FriendsListRender from "./components/friend-list/FriendsListRender";
+import FriendsList from "./components/friend-list/FriendsList";
 import friends from "./components/friend-list/friends.json";
-import TransHistoryRender from './components/transaction-history/TransHistoryRender';
+import TransactionHistory from './components/transaction-history/TransactionHistory';
 import transactions from './components/transaction-history/transactions.json';
 import { GlobalStyles } from "./GlobalStyle";
 import { Global } from "@emotion/react";
@@ -13,7 +13,7 @@ export default function App() {
   return (
       <div>
       <Global styles={GlobalStyles} />
-      <SocProfRender
+      <Profile
         userName={user.username}
         tag={user.tag}
         place={user.location}
@@ -21,10 +21,10 @@ export default function App() {
         stats={user.stats}
       />
 
-      <StatisticRender data = {data} />
+      <Statistic data = {data} />
          
-      <FriendsListRender friends={friends}  />
-      <TransHistoryRender transactions={transactions}/>
+      <FriendsList friends={friends}  />
+      <TransactionHistory transactions={transactions}/>
                 
     </div>
   );

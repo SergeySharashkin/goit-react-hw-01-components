@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-export const FriendList = styled.ul`
+export const Friend = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;

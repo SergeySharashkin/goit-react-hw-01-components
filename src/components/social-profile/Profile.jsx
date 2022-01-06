@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {Profile, Description, Avatar, Name, Tag, Stats, Item} from './SocialProfile.styled';
+import {Profile, Description, Avatar, Name, Tag, Stats, Item} from './Profile.styled';
 export default function SocProfRender({userName, tag, place, avatar, stats:{followers, views, likes}}) {
     
     return <Profile>
