@@ -38,12 +38,12 @@ SocProfRender.propTypes = {
     userName: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
     place: PropTypes.string.isRequired,
-    stats: PropTypes.objectOf(
+    stats: 
       PropTypes.shape({
         followers: PropTypes.number.isRequired,
         views: PropTypes.number.isRequired,
         likes: PropTypes.number.isRequired,
       }),
-    ),
+    
   
 };
